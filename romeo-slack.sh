@@ -1,7 +1,7 @@
 #!/bin/sh
 
 last=0
-mosquitto_sub --url mqtt://localhost/ding-dong | while read line; do
+mosquitto_sub --url $MQTT_URL | while read line; do
     curl --silent \
         https://slack.com/api/chat.postMessage \
         -H "Content-Type: application/json" \
