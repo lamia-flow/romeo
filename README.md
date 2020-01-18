@@ -4,7 +4,7 @@ Romeo – The Boondock Doorbell
 > I dedicate all my today's efforts to my grandma, who has her 90th birthday.
 > ~_Piotr 18.01.2020_
 
-Romeo listens to the 433MHz where doorbells are commonly operating. When
+Romeo listens to the LPD433 band where doorbells are commonly operating. When signal from the doorbell with desired ID is caught, he publish message under specified MQTT topic.
 
 
 Configuration
@@ -13,7 +13,7 @@ Configuration
 Romeo is configured via the following environment variables:
 
 - `BELL_ID` – identifier of the doorbell, returned by the `rtl_433`.
-- `MQTT_URL` – MQTT URL of the topic in form `in the form: mqtt(s)://[username[:password]@]host[:port]/topic`.
+- `MQTT_URL` – MQTT URL of the topic in form in the form: `mqtt(s)://[username[:password]@]host[:port]/topic`.
 - `SLACK_API_TOKEN` – Slack authorization token with `chat:write:bot` scope.
 - `SLACK_CHANNEL` – Slack channel where the "Ding! Dong!" message should be posted.
 
