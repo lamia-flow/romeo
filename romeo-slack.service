@@ -3,4 +3,4 @@ Description=Romeo – The Boondock Doorbell
 
 [Service]
 EnvironmentFile=/etc/romeo
-ExecStart=/usr/bin/romeo.sh
+ExecStart=/usr/bin/romeo-slack.sh
