@@ -1,0 +1,6 @@
+[Unit]
+Description=Romeo – The Boondock Dorbell
+
+[Service]
+EnvironmentFile=/etc/romeo
+ExecStart=/usr/bin/romeo.sh
