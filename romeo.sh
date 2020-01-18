@@ -7,7 +7,7 @@ rtl_433 -F json -M newmodel -R 51 | while read line; do
         result=`echo $line | jq .id==$ID`
         if [ $result = "true" ]; then
             last=$now
-            mosquitto_pub --url $MQTT --message "{\"id\":$id,\"ts\":$now}"
+            mosquitto_pub --url $MQTT --message "{\"id\":$ID,\"ts\":$now}"
         fi
     fi
 done
