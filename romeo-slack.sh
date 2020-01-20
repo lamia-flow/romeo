@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 last=0
 mosquitto_sub --url $MQTT_URL | while read line; do
