@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 last=0
 rtl_433 -F json -M newmodel -R 51 | while read line; do
