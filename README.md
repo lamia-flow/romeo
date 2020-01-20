@@ -25,7 +25,7 @@ Copy:
 - `romeo.sh` and `romeo-slack.sh` to `/usr/bin/`
 - `romeo.service` and `romeo-slack.service` to `/lib/systemd/system/`
 
-Create `/etc/romeo` env like file and place configuration variables inside.
+Create `/etc/romeo.ini` env like file and place configuration variables inside.
 ```sh
 BELL_ID=123456789
 MQTT_URL=mqtt://localhost/ding-dong
