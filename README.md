@@ -18,14 +18,34 @@ Romeo is configured via the following environment variables:
 - `SLACK_CHANNEL` – Slack channel where the "Ding! Dong!" message should be posted.
 
 
+Packaging
+---------
+
+```sh
+mkdir -p pkg/usr/bin/
+mkdir -p pkg/lib/systemd/system/
+mkdir -p pkg/DEBIAN
+
+install -D *.sh pkg/usr/bin/
+install -D *.service pkg/lib/systemd/system/
+
+echo "\
+Package: romeo
+Version: $(git describe --tags)
+Architecture: any
+Depends: rtl-433, mosquitto-clients, curl
+Description: $(head -n 1 README.md)
+" > pkg/DEBIAN/control
+
+dpkg-deb --build pkg
+rm -r pkg
+```
+
+
 Deployment
 ----------
 
-Copy:
-- `romeo.sh` and `romeo-slack.sh` to `/usr/bin/`
-- `romeo.service` and `romeo-slack.service` to `/lib/systemd/system/`
-
-Create `/etc/romeo` env like file and place configuration variables inside.
+Install `pkg.deb` and create `/etc/romeo` env like file and place configuration variables inside.
 ```sh
 BELL_ID=123456789
 MQTT_URL=mqtt://localhost/ding-dong
