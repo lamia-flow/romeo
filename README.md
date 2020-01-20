@@ -45,3 +45,4 @@ systemctl start romeo-slack
 Authors
 -------
 - Piotr Majkrzak <piotr@lamia.fi>
+- Niko Granö (Deb Packing) <niko@lamia.fi>
