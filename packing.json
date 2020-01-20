@@ -1,0 +1,50 @@
+{
+  "version": "1.0.0-SNAPSHOT",
+  "dist": "stable",
+  "meta": {
+    "name": "romeo-doorbell",
+    "description": "Romeo – The Boondock Doorbell",
+    "url": "https://github.com/lamia-flow/romeo",
+    "category": "devel"
+  },
+  "vendor": {
+    "name": "Lamia Oy",
+    "license": "GPLv3",
+    "maintainer": "<devops+romeo@lamia.fi>"
+  },
+  "package": {
+    "type": "deb",
+    "arch": "all",
+    "depends": [
+      "mosquitto-clients",
+      "curl"
+    ],
+    "conflicts": [],
+    "provides": [],
+    "replaces": []
+  },
+  "sources": {
+    "type": "dir",
+    "src": {
+      "./romeo.sh": "/usr/bin/romeo",
+      "./romeo-slack.sh": "/usr/bin/romeo-slack",
+      "./romeo.service": "/lib/systemd/system/romeo.service",
+      "./romeo-slack.service": "/lib/systemd/system/romeo-slack.service"
+    }
+  },
+  "deb": {
+    "before_install": "",
+    "after_install": "./hooks/after_install.sh",
+    "before_remove": "",
+    "after_remove": "./hooks/after_remove.sh",
+    "before_upgrade": "",
+    "after_upgrade": ""
+  },
+  "release": {
+    "auto_tag": false,
+    "keep_copy": true,
+    "repository": "",
+    "dist": []
+  },
+  "custom": ""
+}

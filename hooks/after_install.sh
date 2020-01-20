@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+# Create Example configuration.
+cat <<EOT >> /etc/romeo.ini
+BELL_ID=123456789
+MQTT_URL=mqtt://localhost/ding-dong
+SLACK_API_TOKEN=xoxp-000000000-000000000000-000000000000-00000000000000000000000000000000
+SLACK_CHANNEL=CXXXXXXXX
+EOT

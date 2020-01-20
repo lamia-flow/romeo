@@ -3,8 +3,8 @@ Description=Romeo – The Boondock Doorbell
 After=network-online.target
 
 [Service]
-EnvironmentFile=/etc/romeo
-ExecStart=/usr/bin/romeo.sh
+EnvironmentFile=/etc/romeo.ini
+ExecStart=/usr/bin/romeo
 Restart=always
 
 [Install]
